@@ -23,7 +23,8 @@ with open('models/mape_values.pkl', 'rb') as f:
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return predict()  # `/predict` fonksiyonunu çağırır ve aynı işlemleri yapar
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
