@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Cost Estimator</title>
+</head>
+<body>
+    <h1>Pipeline Cost Estimator</h1>
+    <form action="/predict" method="post">
+        <label for="diameter">Pipe Diameter (inches):</label>
+        <input type="number" step="any" id="diameter" name="diameter" required value="{{ diameter or '' }}">
+        <br>
+        <label for="length">Pipeline Length (km):</label>
+        <input type="number" step="any" id="length" name="length" required value="{{ length or '' }}">
+        <br>
+        <label for="line_valve">Number of Line Valves:</label>
+        <input type="number" id="line_valve" name="line_valve" required value="{{ line_valve or '' }}">
+        <br>
+        <label for="take_off_valve">Number of Take-Off Valves:</label>
+        <input type="number" id="take_off_valve" name="take_off_valve" required value="{{ take_off_valve or '' }}">
+        <br>
+        <label for="pigging_station">Number of Pigging Stations:</label>
+        <input type="number" id="pigging_station" name="pigging_station" required value="{{ pigging_station or '' }}">
+        <br>
+        <button type="submit">Estimate Cost</button>
+    </form>
+
+    <h2>Tahmin Sonuçları:</h2>
+    <div id="results">
+        {{ results|safe }}
+    </div>
+</body>
+</html>
