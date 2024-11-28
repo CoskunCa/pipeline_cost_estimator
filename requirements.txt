@@ -1,3 +1,5 @@
-Flask
+flask
 numpy
 pickle-mixin
+xgboost
+scikit-learn
